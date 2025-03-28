@@ -30,6 +30,37 @@ namespace IntroBranching
                 Console.WriteLine("So what do you do?");
             }
 
+            int numOfShirts = 7;
+
+            if (numOfShirts != 3)
+            {
+                Console.WriteLine("You have a different number of shirts than I do.");  
+            }
+
+            if (numOfShirts >= 7)
+            {
+                Console.WriteLine("That's enough shirts for each day of the week!");
+            }
+
+
+             int age = 17;
+
+            if (age >= 18)
+            {
+                Console.WriteLine("YOu can join the armed forces if you want to serve your country.");  
+
+            }
+            else
+            {
+                Console.WriteLine("You can't join yet");
+            }
+
+            //Ternary Operator
+
+            int daysTillMove = 58;
+
+            string mustPayCharge = daysTillMove >= 60? "You must pay the charge." : "You do not have to pay the charge."; 
+            Console.WriteLine(mustPayCharge);
 
 
         }
