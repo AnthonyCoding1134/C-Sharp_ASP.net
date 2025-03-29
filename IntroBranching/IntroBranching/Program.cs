@@ -174,7 +174,7 @@ namespace IntroBranching
 
 
              while (isGuessed == false);
-             */
+             
 
 
             int numofComputersFixed = 0;
@@ -186,8 +186,68 @@ namespace IntroBranching
 
             }
 
+        */
+            Console.WriteLine("How much RAM do you have in your computer?");
+            int amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+            bool enoughMemory = amountOfRaminGB == 128;
 
-          
+            do
+            {
+                switch (amountOfRaminGB)
+                {
+                    case 0:
+                        Console.WriteLine("You need to get more RAM!");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+
+                    case 4:
+                        Console.WriteLine("You can do very basic word processing");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+
+                    case 8:
+                        Console.WriteLine("You can do basic word processing and web browsing");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+
+                    case 16:
+                        Console.WriteLine("You can do basic word processing, web browsing, and some light gaming");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+
+                    case 32:
+                        Console.WriteLine("You can do basic word processing, web browsing, light gaming, and some video editing");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+
+                    case 64:
+                        Console.WriteLine("You can do basic word processing, web browsing, light gaming, video editing, and some 3D rendering");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+
+                    case 128:
+                        Console.WriteLine("You can do basic word processing, web browsing, light gaming, video editing, 3D rendering, and some machine learning");
+                       // amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        enoughMemory = true;   
+                        break;
+
+                    default:
+                        Console.WriteLine("That is not a recognized configuration");
+                        Console.WriteLine("How much RAM do you have in your computer?");
+                        amountOfRaminGB = Convert.ToInt32(Console.ReadLine());
+                        break;
+                }
+            }
+            while (!enoughMemory);
+           
+            
+           
 
 
         }
