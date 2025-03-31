@@ -204,18 +204,18 @@ namespace Iteration
                 {
                     Console.WriteLine(country + " is unique");
                 }
-
+               
                 else
                 {
                     Console.WriteLine(country + " is a duplicate");
                 }
 
-                    newList.Add(country);
 
-               
-                
+                newList.Add(country);
 
-               
+
+
+
             }
 
         }
