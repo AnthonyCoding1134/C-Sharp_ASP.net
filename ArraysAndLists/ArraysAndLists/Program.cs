@@ -20,8 +20,15 @@ using System.Threading.Tasks;
 
         Console.WriteLine(numArray[3]);  //200
 
-        int[] numArray2 = new int[] { 5, 2, 10, 200, 5000 };  //create array and assign values in one line  
-        Console.WriteLine(numArray2[1]);     //2
+        int[] numArray2 = new int[] { 5, 2, 10, 200, 5000 };  //create array and assign values in one line .  didnt need to set the length
+        int[] numArray3 = { 12, 14, 78, 89, 101};   //easiest way
+
+        numArray3[2] = 56;
+        Console.WriteLine(numArray3[2]);     //56
+
+
+
+
 
         // Assignment
 
@@ -35,10 +42,10 @@ using System.Threading.Tasks;
         }
 
 
-        int[] numberArray = new int[] { 100, 200, 300, 400, 500 };
+        int[] numberArray4 = new int[] { 100, 200, 300, 400, 500 };
         Console.WriteLine("Select an index: ");
         int userValue2 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("You selected: " + numberArray[userValue2]);
+        Console.WriteLine("You selected: " + numberArray4[userValue2]);
         if (userValue2 > 4)
         {
             Console.WriteLine("That index does not exist.");
@@ -59,6 +66,20 @@ using System.Threading.Tasks;
         {
             Console.WriteLine("That index does not exist.");
         }   
+
+
+        // LISTS - mpore flexible
+        List<int> myList = new List<int>();
+        myList.Add(1);
+        myList.Add(4);
+
+        List<string> myStringList = new List<string>();
+        myStringList.Add("Anthony");
+        myStringList.Add("Jesse");
+        myStringList.Add("Rocky");
+        myStringList.Add("Jessica");
+        myStringList.Remove("Jessica");
+        Console.WriteLine(myStringList[2]);  
 
     }
 
