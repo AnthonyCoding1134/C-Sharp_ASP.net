@@ -26,6 +26,11 @@ namespace CallingMethodsAssignment
             return value;
         }
 
-         
+        public static int SquareRoot(int value)
+        {
+            value = (int)Math.Sqrt(Convert.ToInt32(value));
+            return value;
+        }
+
     }
 }

@@ -21,7 +21,7 @@ namespace CallingMethodsAssignment
             Console.WriteLine(myObject.AddFiveToInt(usersNum));
             Console.WriteLine(IntegerReturn.Times6ToInt(usersNum));
             Console.WriteLine(IntegerReturn.SubtractTenFromInt(usersNum));
-
+            Console.WriteLine(IntegerReturn.SquareRoot(usersNum));
 
         }
     }
