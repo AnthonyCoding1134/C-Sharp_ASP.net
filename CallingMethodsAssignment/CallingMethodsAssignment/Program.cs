@@ -15,8 +15,11 @@ namespace CallingMethodsAssignment
             Console.WriteLine("which number?");
             int usersNum = Convert.ToInt32(Console.ReadLine());
 
-            //This is needed when static keyword id not used on the method
+            //This is needed when static keyword is not used on the method
             IntegerReturn myObject = new IntegerReturn();
+
+            IntegerReturn myObject2 = new IntegerReturn();
+
 
             Console.WriteLine(myObject.AddFiveToInt(usersNum));
             Console.WriteLine(IntegerReturn.Times6ToInt(usersNum));
