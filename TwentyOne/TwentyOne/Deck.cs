@@ -43,10 +43,41 @@ namespace TwentyOne
 
             }
 
-           }
+        }
 
         // 1st thing we did after creating class - Cards is a property of the Deck class w/datatype List<Card>
-        public List<Card> Cards { get; set; }  
+        public List<Card> Cards { get; set; }
+
+        //public static Deck Shuffle(Deck deck)
+        //Altering the method to add a default times param
+        //public static Deck Shuffle(Deck deck1, out int timesShufffled, int times = 1)
+        // When we remove static keyword we no longer need to specify the class name
+        public void Shuffle(int times = 1) 
+
+        {
+            
+
+            for (int i = 0; i < times; i++)
+
+            {
+                
+                List<Card> TempList = new List<Card>();
+                Random random = new Random();
+
+                while (Cards.Count > 0)
+                {
+                    int randomIndex = random.Next(0, Cards.Count);   // get random card between 0 & 52
+                    TempList.Add(Cards[randomIndex]);   //add it to temp list
+                    Cards.RemoveAt(randomIndex);    //removes  from the list of cards to prevent duplication
+                }
+
+              // Cards = TempList;
+              //***Another way to write it now that we removed static keyword***
+              this.Cards = TempList;
+
+            }
+           // return deck1;
+        }
     }
 
     

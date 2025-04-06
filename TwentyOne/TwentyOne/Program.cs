@@ -16,18 +16,20 @@ namespace TwentyOne
             Deck deck1 = new Deck();
             //deck1 = Shuffle(deck1);
             //deck1 = Shuffle(deck1, 3);
-            //named param
+            //****named param****
             //deck1 = Shuffle(deck1: deck1, 3);
             int timesShuffled = 0;  
             //Out keyword- returns new value to the variable above after it gets incremented by the method.  
-            deck1 = Shuffle(deck1, out timesShuffled, 3);
+            //deck1 = Shuffle(deck1, out timesShuffled, 3);
 
-          
+            deck1.Shuffle(3); // Call the method on the object itself now that static keyword is removed
+
+
 
 
             //Console.WriteLine(deck1.Cards[0].Face + " of " + deck1.Cards[0].Suit);
             //Console.WriteLine(deck1.Cards[1].Face + " of " + deck1.Cards[1].Suit);
-            
+
             foreach (Card card in deck1.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
@@ -50,30 +52,7 @@ namespace TwentyOne
             // deck1.Cards.Add(card53);
          }
         
-        //public static Deck Shuffle(Deck deck)
-        //here we alter the method to add a default times param
-        public static Deck Shuffle(Deck deck1, out int timesShufffled, int times = 1)
-
-        {
-            timesShufffled = 0;
-
-            for (int i = 0; i < times; i++)
-                timesShufffled++;    
-            {
-                List<Card> TempList = new List<Card>();
-                Random random = new Random();
-
-                while (deck1.Cards.Count > 0)
-                {
-                    int randomIndex = random.Next(0, deck1.Cards.Count);   // get random card
-                    TempList.Add(deck1.Cards[randomIndex]);   //add it to temp list
-                    deck1.Cards.RemoveAt(randomIndex);    //removes  from the list of cards to prevent duplication
-                }
-
-                deck1.Cards = TempList;
-            }
-            return deck1;
-            }
+       
 
         // method overload: allows you to define multiple methods w/ same name but different params
         // Commented out after adding the optional param to the method above
