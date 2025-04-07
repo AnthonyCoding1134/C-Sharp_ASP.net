@@ -12,6 +12,17 @@ namespace TwentyOne
         static void Main(string[] args)
         {
 
+             TwentyOneGame game1 = new TwentyOneGame();
+          
+            game1.Players = new List<string>() { "Jordan", "Eric", "Jonathan", "Lennox" };
+            game1.ListPlayers();
+            game1.Play();
+
+
+            // Game game1 = new Game();
+            //game.Dealer = "Anthony";
+            //game.Name = "TwentyOne";
+
             // Create a new deck object based on "Deck" class- which has a property (list) "Cards".  This produces 52 "cards" 
             Deck deck1 = new Deck();
             //deck1 = Shuffle(deck1);
@@ -45,12 +56,15 @@ namespace TwentyOne
             //Card cardOne = new Card();
             //cardOne.Face = "Queen";
             //cardOne.Suit = "Spades";
+            // **** OBJECT INITIALIZATION****
+           // Card cardOne = new Card() { Face = "Queen", Suit = "Spades" }; 
+
             //Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
 
             // deck1.Cards.Add(cardOne); // Add the card to the deck
 
             // deck1.Cards.Add(card53);
-         }
+        }
         
        
 
