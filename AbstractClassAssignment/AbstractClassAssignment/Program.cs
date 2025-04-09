@@ -19,12 +19,12 @@ namespace AbstractClassAssignment
             employee.sayName();
             employee.Quit();
 
-            //using polymprhism to create object of type iquittable?
-            IQuittable disgruntledEmployee = new Employee();
+            //using polymprhism to create object of type iquittable
+           // IQuittable disgruntledEmployee = new Employee();
             
 
 
-            disgruntledEmployee.Quit();
+           /// disgruntledEmployee.Quit();
 
 
         }
