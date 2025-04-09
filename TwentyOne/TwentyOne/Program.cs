@@ -10,23 +10,19 @@ namespace TwentyOne
     class Program
     {
         static void Main(string[] args)
+
         {
+            // This is polymorphism- we are using the base class to create an object of the derived class
+            //Game game1 = new TwentyOneGame();
 
-             TwentyOneGame game1 = new TwentyOneGame();
+            TwentyOneGame game1 = new TwentyOneGame();
+            Dealer dealer = new Dealer();   
           
-            game1.Players = new List<string>() { "Jordan", "Eric", "Jonathan", "Lennox" };
-            game1.ListPlayers();
-            game1.Play();
-
-
-            // Game game1 = new Game();
-            //game.Dealer = "Anthony";
-            //game.Name = "TwentyOne";
 
             // Create a new deck object based on "Deck" class- which has a property (list) "Cards".  This produces 52 "cards" 
             Deck deck1 = new Deck();
             //deck1 = Shuffle(deck1);
-            //deck1 = Shuffle(deck1, 3);
+            
             //****named param****
             //deck1 = Shuffle(deck1: deck1, 3);
             int timesShuffled = 0;  
@@ -35,12 +31,8 @@ namespace TwentyOne
 
             deck1.Shuffle(3); // Call the method on the object itself now that static keyword is removed
 
-
-
-
-            //Console.WriteLine(deck1.Cards[0].Face + " of " + deck1.Cards[0].Suit);
-            //Console.WriteLine(deck1.Cards[1].Face + " of " + deck1.Cards[1].Suit);
-
+           
+            
             foreach (Card card in deck1.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
