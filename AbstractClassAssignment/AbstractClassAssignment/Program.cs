@@ -17,6 +17,16 @@ namespace AbstractClassAssignment
             employee.firstName = "Sample";
             employee.lastName = "Student";
             employee.sayName();
+            employee.Quit();
+
+            //using polymprhism to create object of type iquittable?
+            IQuittable disgruntledEmployee = new Employee();
+            
+
+
+            disgruntledEmployee.Quit();
+
+
         }
     }
 }
