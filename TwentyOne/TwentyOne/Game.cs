@@ -10,7 +10,8 @@ namespace TwentyOne
     public abstract class Game
     {
         // Property thats common to all games
-        public List<string> Players { get; set; }
+      //  public List<string> Players { get; set; }
+        public List<Player> Players { get; set; }
         public string Name { get; set; }
         public string Dealer { get; set; }
 
@@ -20,9 +21,9 @@ namespace TwentyOne
         // Virtual: can be overridden in derived classes, but does not have to be.  This is a concrete method.
         public virtual void ListPlayers()
         {
-            foreach (string player in Players)
+            foreach (Player player in Players)
             {
-                Console.WriteLine(player);
+                Console.WriteLine(player.Name);
             }
         }
 

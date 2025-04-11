@@ -51,8 +51,8 @@ namespace TwentyOne
         //public static Deck Shuffle(Deck deck)
         //Altering the method to add a default times param
         //public static Deck Shuffle(Deck deck1, out int timesShufffled, int times = 1)
-        // When we remove static keyword we no longer need to specify the class name
-        public void Shuffle(int times = 1) 
+        // When we removed static keyword we no longer need to specify the class name
+        public int Shuffle(int times = 1) 
 
         {
             
@@ -75,8 +75,10 @@ namespace TwentyOne
               //***Another way to write it now that we removed static keyword***
               this.Cards = TempList;
 
+               
             }
-           // return deck1;
+           
+            return times; // returns the number of times shuffled
         }
     }
 
