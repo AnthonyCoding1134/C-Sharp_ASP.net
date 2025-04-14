@@ -16,15 +16,15 @@ namespace TwentyOne
 
 
             // Polymorphism: Using the base class 'Game' to create a new object of the derived class 'TwentyOneGame'
-            Game game1 = new TwentyOneGame();
-            game1.Players = new List<Player>();
-            Player player = new Player();
-            player.Name = "Jordan";
+            //Game game1 = new TwentyOneGame();
+           // game1.Players = new List<Player>();
+           // Player player = new Player();
+           // player.Name = "Jordan";
 
             
 
             // overloaded operator + to add a player to the game .  a game is retunred
-            game1 = game1 + player;    
+            //game1 = game1 + player;    
 
             // gives us 52 cards
             Deck deck1 = new Deck();

@@ -26,6 +26,7 @@ namespace Operators_Assignment
             employee4 = null;   
             var employee5 = new Employee { Id = 4443447, FirstName = "Ant", LastName = "Doe" };
 
+            // this calls the hashcode method   
             var employees = new HashSet<Employee>();
 
             employees.Add(employee1);
