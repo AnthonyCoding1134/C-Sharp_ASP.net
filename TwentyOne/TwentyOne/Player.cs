@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace TwentyOne
 {
     //we can make Hand generic (Ex: it could be dice) by passing in <T> to the class
-    public class Player<T>
+    public class Player
     {
         
-        public List<T> Hand { get; set; }
+        public List<Card> Hand { get; set; }
         public int Balance { get; set; }
 
         public string Name { get; set; }

@@ -9,49 +9,49 @@ namespace TwentyOne
     public class Deck
     {
         // Constructor: method that gets called when an object is created & assigns default values- always the name of the class
-        public Deck() 
+        public Deck()
         {
-            /*Cards = new List<Card>();
-            Card cardOne = new Card();
-            cardOne.Face = "Two";
-            cardOne.Suit = "Clubs";
-            Cards.Add(cardOne);
-
-            Card cardTwo = new Card();
-            cardTwo.Face = "Ten";
-            cardTwo.Suit = "Diamonds";
-            Cards.Add(cardTwo);
-            */
+           
 
             // Instantiates the property "Cards" as an empty list of class Card
             Cards = new List<Card>();
 
-            List<string> Faces = new List<string>()
-            { "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
-
-            List<string> Suites = new List<string>() { "Spades", "Clubs", "Hearts", "Diamonds" };
-
-            foreach (string Face in Faces)
+            for (int i = 0; i < 13; i++)
             {
-                foreach (string Suite in Suites)
+                for(int j = 0; j < 4; j++)
                 {
                     Card card = new Card();
-                    card.Face = Face;
-                    card.Suit = Suite;
+                    card.Face = (Face)i; // Casts the int to the enum type (Face)
+                    card.Suit = (Suit)j; // Casts the int to the enum type (Suit)
                     Cards.Add(card);  //adds into our Cards list
                 }
 
             }
+           
+
+            //*****Everything below got refactored after adding the enum
+
+            //List<string> Faces = new List<string>()
+           // { "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
+           // List<string> Suits = new List<string>() { "Spades", "Clubs", "Hearts", "Diamonds" };
+
+          //  foreach (string Face in Faces)
+          //  {
+            //    foreach (string Suit in Suits)
+            //    {
+            //        Card card = new Card();
+            //        card.Face = Face;
+            //        card.Suit = Suit;
+            //        Cards.Add(card);  //adds into our Cards list
+            //    }
+            //   }
+
 
         }
-
         // 1st thing we did after creating class - Cards is a property of the Deck class w/datatype List<Card>
         public List<Card> Cards { get; set; }
 
-        //public static Deck Shuffle(Deck deck)
-        //Altering the method to add a default times param
-        //public static Deck Shuffle(Deck deck1, out int timesShufffled, int times = 1)
-        // When we removed static keyword we no longer need to specify the class name
+      
         public int Shuffle(int times = 1) 
 
         {
@@ -71,14 +71,12 @@ namespace TwentyOne
                     Cards.RemoveAt(randomIndex);    //removes  from the list of cards to prevent duplication
                 }
 
-              // Cards = TempList;
-              //***Another way to write it now that we removed static keyword***
-              this.Cards = TempList;
+              Cards = TempList;
 
-               
             }
-           
-            return times; // returns the number of times shuffled
+            return times;  // returns the number of times shuffled
+
+
         }
     }
 
