@@ -10,20 +10,13 @@ namespace TwentyOne
     class Program
     {
         static void Main(string[] args)
-
         {
+
+
+
+           
+
             //Struct: a class with a value type that cannot inherit.  They are non-nullable
-            
-            Card card1 = new Card(); 
-            Card card2 = card1; //This is a reference type.... card2 is a reference to the same object as card1.  Classes are reference types.
-            card1.Face = Face.Ace;  
-
-            card2.Face = Face.Two; //This will change the value of card1 as well, because they are both referencing the same object
-
-            Console.WriteLine(card1.Face); // This will print "Two" when Card is class but Ace when Card is a struct
-
-
-
             // Polymorphism: Using the base class 'Game' to create a new object of the derived class 'TwentyOneGame'
             //Game game1 = new TwentyOneGame();
 
@@ -33,7 +26,15 @@ namespace TwentyOne
 
             Deck deck1 = new Deck();
            int timesShuffled = deck1.Shuffle(3);
-           
+
+            //***LAMBA EXPRESSION****
+            List<Card> newList = deck1.Cards.Where(x => x.Suit == Suit.Spades).ToList();
+            foreach (Card card in newList)
+            {
+                Console.WriteLine(card.Face + " of " + card.Suit);
+            }   
+
+          
 
             //****named param****
             //deck1 = Shuffle(deck1: deck1, 3);

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    //public class Card   
-    public struct Card
+    public class Card   
+   // public struct Card
 
     {
         // Constructor: method that gets called when an object is created & assigns default values- always the name of the class
