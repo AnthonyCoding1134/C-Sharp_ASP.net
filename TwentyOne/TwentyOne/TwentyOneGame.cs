@@ -41,16 +41,31 @@ namespace TwentyOne
                 foreach (Player player in Players)
                 {
                     Console.Write("{ 0}: ", player.Name);
-                    Dealer.Deal(player.Hand);   
-                    if(i == 1)
+                    Dealer.Deal(player.Hand);
+                    if (i == 1)
                     {
                         bool blackJack = TwentyOneRules.CheckForBlackJack(player.Hand);
-                        if(blackJack) Console.WriteLine("Blackjack! {0} wins {1}!", player.Name, Bets[player]);
+                        if (blackJack) Console.WriteLine("Blackjack! {0} wins {1}!", player.Name, Bets[player]);
                         player.Balance += Convert.ToInt32((Bets[player] * 1.5) + Bets[player]); // player wins 1.5 times the bet amount
                         return;
                     }
                 }
 
+
+                Console.Write("Dealer: ");
+                Dealer.Deal(Dealer.Hand); // deal to dealer
+                if (i == 1)
+                {
+                    bool blackJack = TwentyOneRules.CheckForBlackJack(Dealer.Hand);
+                    if (blackJack)
+                    {
+                        Console.WriteLine("Dealer wins with a blackjack!");
+                        foreach (KeyValuePair<Player, int> entre in Bets )
+                        {
+                            Dealer.Balance += entre.Value; // dealer wins the bet amount
+                        }
+                    }
+                }
             }
         }
 
