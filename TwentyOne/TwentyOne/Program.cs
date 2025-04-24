@@ -12,50 +12,38 @@ namespace TwentyOne
         static void Main(string[] args)
         {
 
+            Console.WriteLine("Welcome to Anthony's Casino!  Let's start by telling me your name.");
+            string playerName = Console.ReadLine();
 
+            Console.WriteLine("And how much money did you bring today?");   
+            int bank = Convert.ToInt32(Console.ReadLine());
 
-           
+            Console.WriteLine("Hello {0}, would you like to play some blackjack?", playerName);
+            string answer = Console.ReadLine().ToLower();
 
-            //Struct: a class with a value type that cannot inherit.  They are non-nullable
-            // Polymorphism: Using the base class 'Game' to create a new object of the derived class 'TwentyOneGame'
-            //Game game1 = new TwentyOneGame();
-
-            // overloaded operator + to add a player to the game .  a game is retunred
-            //game1 = game1 + player;    
-
-
-            Deck deck1 = new Deck();
-           int timesShuffled = deck1.Shuffle(3);
-
-            //***LAMBA EXPRESSION****
-            List<Card> newList = deck1.Cards.Where(x => x.Suit == Suit.Spades).ToList();
-            foreach (Card card in newList)
+            if (answer == "yes"|| answer == "yup" || answer == "you damn right" || answer == "y")
             {
-                Console.WriteLine(card.Face + " of " + card.Suit);
-            }   
+                Player player = new Player(playerName, bank);
+                Game game = new TwentyOneGame();  //polymorphism allows us to use more operators (perhaps from both classes)
+                game += player;
+                player.isActivelyPlaying = true;
+                while(player.isActivelyPlaying && player.Balance > 0)
+                {
+                    game.Play();
+                }
 
-          
+                game -= player;
+                Console.WriteLine("Thank you for playing!");
 
-            //****named param****
-            //deck1 = Shuffle(deck1: deck1, 3);
-            //int timesShuffled = 0;  
-            //Out keyword- returns new value to the variable above after it gets incremented by the method.  
-            //deck1 = Shuffle(deck1, out timesShuffled, 3);
-
-
-            foreach (Card card in deck1.Cards)
-            {
-                Console.WriteLine(card.Face + " of " + card.Suit);
             }
+            Console.WriteLine("You emit a foul and unpleasant odor");
+            Console.Read();
 
-            Console.WriteLine(deck1.Cards.Count);
-            Console.WriteLine("Was shuffled {0} times", timesShuffled);
 
-           
-            // **** OBJECT INITIALIZATION****
-            //Card cardOne = new Card() { Face = "Queen", Suit = "Spades" }; 
 
-           
+
+
+
         }
     }
 

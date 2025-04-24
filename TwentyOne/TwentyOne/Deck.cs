@@ -8,7 +8,7 @@ namespace TwentyOne
 {
     public class Deck
     {
-        // Constructor: method that gets called when an object is created & assigns default values- always the name of the class
+      
         public Deck()
         {
            
@@ -29,22 +29,7 @@ namespace TwentyOne
             }
            
 
-            //*****Everything below got refactored after adding the enum
-
-            //List<string> Faces = new List<string>()
-           // { "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
-           // List<string> Suits = new List<string>() { "Spades", "Clubs", "Hearts", "Diamonds" };
-
-          //  foreach (string Face in Faces)
-          //  {
-            //    foreach (string Suit in Suits)
-            //    {
-            //        Card card = new Card();
-            //        card.Face = Face;
-            //        card.Suit = Suit;
-            //        Cards.Add(card);  //adds into our Cards list
-            //    }
-            //   }
+        
 
 
         }

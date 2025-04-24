@@ -16,7 +16,7 @@ namespace TwentyOne
 
         public void Deal(List<Card> Handy)  //List of type Card called Handy
         {
-            Handy.Add(Deck.Cards.First());   
+            Handy.Add(Deck.Cards.First());
             Console.WriteLine(Deck.Cards.First().ToString() + "\n");
             Deck.Cards.RemoveAt(0); // Remove the first card from the deck
 
