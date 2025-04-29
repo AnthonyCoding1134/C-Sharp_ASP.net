@@ -8,7 +8,13 @@ namespace TwentyOne
 {
    public class TwentyOneDealer : Dealer
     {
-        public List<Card> Hand { get; set; }
+        //Encapsulation: should be done anytime dealing with lists/ collections
+        private List<Card> _hand = new List<Card>();
+        public List<Card> Hand 
+        {
+            get { return _hand; } 
+            set { _hand = value; } 
+        }
         public bool Stay { get; set; }
         public bool isBusted { get; set; }
 

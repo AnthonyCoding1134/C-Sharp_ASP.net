@@ -27,13 +27,9 @@ namespace TwentyOne
                 }
 
             }
-           
-
-        
-
-
         }
-        // 1st thing we did after creating class - Cards is a property of the Deck class w/datatype List<Card>
+
+        // 1st thing we did after creating class 
         public List<Card> Cards { get; set; }
 
       

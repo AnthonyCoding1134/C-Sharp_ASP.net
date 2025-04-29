@@ -15,19 +15,20 @@ namespace TwentyOne
             Console.WriteLine("Welcome to Anthony's Casino!  Let's start by telling me your name.");
             string playerName = Console.ReadLine();
 
-            Console.WriteLine("And how much money did you bring today?");   
+            Console.WriteLine("Hi {0}, much money did you bring today?", playerName);   
             int bank = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Hello {0}, would you like to play some blackjack?", playerName);
+            Console.WriteLine("Well {0}, would you like to play some blackjack?", playerName);
             string answer = Console.ReadLine().ToLower();
 
-            if (answer == "yes"|| answer == "yup" || answer == "you damn right" || answer == "y")
+            if (answer == "yes" || answer == "yup" || answer == "you damn right" || answer == "y")
             {
                 Player player = new Player(playerName, bank);
-                Game game = new TwentyOneGame();  //polymorphism allows us to use more operators (perhaps from both classes)
+                //polymorphism allows us to run TwentyOneGame's version of  Game's Play() bc it overrides it
+                Game game = new TwentyOneGame();
                 game += player;
                 player.isActivelyPlaying = true;
-                while(player.isActivelyPlaying && player.Balance > 0)
+                while (player.isActivelyPlaying && player.Balance > 0)
                 {
                     game.Play();
                 }
@@ -36,10 +37,13 @@ namespace TwentyOne
                 Console.WriteLine("Thank you for playing!");
 
             }
-            Console.WriteLine("You emit a foul and unpleasant odor");
-            Console.Read();
+            else
+            {
+                Console.WriteLine("You emit a foul and unpleasant odor");
+                return;
 
 
+            }
 
 
 

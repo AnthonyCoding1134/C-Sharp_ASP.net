@@ -8,13 +8,28 @@ namespace TwentyOne
 {
     // Abstract class: cannot be instantiated, but can be inherited (Base class)    
   public abstract class Game
-    //public class Game
+   
     {
-        // Property thats common to all games
-        //  public List<string> Players { get; set; }
-        public List<Player> Players { get; set; }
+
+        // Encapsulation: public properties provide controlled access to private fields
+        private List<Player> _players = new List<Player>();
+
+        public List<Player> Players
+        {
+            get { return _players; }
+            set { _players = value; }
+        }
+
+        private Dictionary<Player, int> _bets = new Dictionary<Player, int>();
+
+        public Dictionary<Player, int> Bets
+        {
+            get { return _bets; }
+            set { _bets = value; }
+        }
+
         public string Name { get; set; }
-        public Dictionary<Player, int> Bets { get; set; } // Dictionary to hold player and bet amount
+
 
 
         // **** ABSTRACT METHOD - no implementation ****  TwentyOneGame must implement this method inherited from Game

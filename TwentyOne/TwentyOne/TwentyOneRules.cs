@@ -31,7 +31,7 @@ namespace TwentyOne
      
         private static int[] GetAllPossbileHandValues(List<Card> Hand)
         {
-            // Lambda expression- find out how many aces there are
+            // Lambda expression- find out how many aces in hand
             int aceCount = Hand.Count(x => x.Face == Face.Ace);
             //possible values of the hand depending on whether Ace is 1 or 11.  declaring how many possible values there are in the array
             int[] possibleValues = new int[aceCount + 1];  
@@ -41,7 +41,8 @@ namespace TwentyOne
 
             for(int i = 1; i < possibleValues.Length; i++)
             {
-                value += (i * 10); // Increase the hand value by (i * 10) to reflect i Aces being counted as 11 instead of 1
+                value += (i * 10); // Increase the hand value by (i * 10) to reflect i Aces being counted as 11 instead of 1.  is this faulty logic?
+                // value += 10; // Increase the hand value by 10 for each Ace counted as 11
                 possibleValues[i] = value; // store the value in the array
             }
 
@@ -57,6 +58,42 @@ namespace TwentyOne
             else return false;
         }
 
+        //we use static when we dont need to create an object
+        public static bool CheckForBusted(List<Card> Hand)
+        {
+            int value = GetAllPossbileHandValues(Hand).Min(); // get the minimum value of the hand
+            if (value > 21) return true;
+            else return false;
+        }
 
+        public static bool ShouldDealerStay(List<Card> Hand)
+        {
+            int[] possibleHandValues = GetAllPossbileHandValues(Hand);
+            foreach (int value in possibleHandValues)
+            {
+                if (value > 16 && value < 22) return true; // dealer should stay if the value is between 17 and 21
+                
+            }
+            return false;
+        }
+        //nullable boolean
+        public static bool? CompareHands(List<Card> PlayerHand, List<Card> DealerHand)
+        { 
+            int[] playerResults = GetAllPossbileHandValues(PlayerHand);
+            int[] dealerResults = GetAllPossbileHandValues(DealerHand);
+
+            // in each hand we need to find the highest value that is less then 22
+            int playerScore = playerResults.Where(x => x < 22).Max();
+            int dealerScore = dealerResults.Where(x => x < 22).Max();
+
+            if (playerScore > dealerScore) return true;
+            else if (playerScore < dealerScore) return false;
+            else return null; // tie
+
+
+
+
+
+        }
     }
 }
