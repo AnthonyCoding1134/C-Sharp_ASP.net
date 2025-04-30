@@ -51,18 +51,18 @@ namespace TwentyOne
 
 
         // Operator overloading: allows us to use the + operator to add a player to a game
-        public static Game operator +(Game game, Player player)
-        {
-            game.Players.Add(player);
-            return game;
-        }
+        //public static Game operator +(Game game, Player player)
+        //{
+        //    game.Players.Add(player);
+        //    return game;
+        //}
 
-        public static Game operator -(Game game, Player player)
-        {
-            game.Players.Remove(player);
-            return game;
+        //public static Game operator -(Game game, Player player)
+        //{
+        //    game.Players.Remove(player);
+        //    return game;
 
-        }
+        //}
 
       
 

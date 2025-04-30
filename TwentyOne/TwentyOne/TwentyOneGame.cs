@@ -31,18 +31,29 @@ namespace TwentyOne
             Console.WriteLine("How much do you wanna lose..oops I mean bet?");
 
 
-            //Takes bets & ensures players have the funds
+            //Implementing tryparse so Jordan cant break it...plus my comments are awesome
             foreach (Player player in Players)
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{player.Name}, place your bet:");
+
+                string input = Console.ReadLine();
+                int bet;
+
+                // Keep asking until a valid numeric bet is entered
+                while (!int.TryParse(input, out bet))
+                {
+                    Console.WriteLine("Use numbers not letters. Please enter a numeric value for your bet:");
+                    input = Console.ReadLine();
+                }
+
                 bool successfulBet = player.Bet(bet);
                 if (!successfulBet)
                 {
                     Console.WriteLine("You're in over your head pal. Don't be such a degenerate");
-                    return; 
+                    return;
                 }
-                Bets[player] = bet; // add the player and bet amount to the Bets dictionary
 
+                Bets[player] = bet; // add the player and bet amount to the Bets dictionary
             }
 
             //Deals first 2 cards to players- checks for blackjack & if so- pays out

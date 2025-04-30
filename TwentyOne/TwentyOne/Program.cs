@@ -12,6 +12,7 @@ namespace TwentyOne
         static void Main(string[] args)
         {
 
+            
             Console.WriteLine("Welcome to Anthony's Casino!  Let's start by telling me your name.");
             string playerName = Console.ReadLine();
 
@@ -26,14 +27,15 @@ namespace TwentyOne
                 Player player = new Player(playerName, bank);
                 //polymorphism allows us to run TwentyOneGame's version of  Game's Play() bc it overrides it
                 Game game = new TwentyOneGame();
-                game += player;
+               // game += player;
+               game.Players.Add(player);
                 player.isActivelyPlaying = true;
                 while (player.isActivelyPlaying && player.Balance > 0)
                 {
                     game.Play();
                 }
 
-                game -= player;
+                game.Players.Remove(player);
                 Console.WriteLine("Thank you for playing!");
 
             }
