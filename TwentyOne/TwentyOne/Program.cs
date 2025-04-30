@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+//enabling logging
+using System.IO;
 
 namespace TwentyOne
 {
@@ -12,7 +14,12 @@ namespace TwentyOne
         static void Main(string[] args)
         {
 
+            //string textToBeWrote = "Here is some text";
+            // File.WriteAllText(path: @"C:\Code_Logs\log.txt", textToBeWrote);
             
+
+           // string textToBeRead = File.ReadAllText(path: @"C:\Code_Logs\log.txt");
+
             Console.WriteLine("Welcome to Anthony's Casino!  Let's start by telling me your name.");
             string playerName = Console.ReadLine();
 
@@ -47,10 +54,10 @@ namespace TwentyOne
 
             }
 
+           
 
 
-
-        }
+    }
     }
 
 }
