@@ -23,6 +23,7 @@ namespace TwentyOne
             //streams: unmanaged code.  Making sur eeverything gets disposed of
             using (StreamWriter file = new StreamWriter(@"C:\Code_Logs\log2.txt", true))
             {
+                file.WriteLine(DateTime.Now);
                 file.WriteLine(card);
             }
 

@@ -13,12 +13,16 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            DateTime myDOB = new DateTime(1995, 5, 17, 7, 03, 17);
+            DateTime gradDate = new DateTime(2017, 5, 17, 7, 03, 17);   
+            
+            TimeSpan numDaysSinceGraduation = gradDate - myDOB;
 
             //string textToBeWrote = "Here is some text";
             // File.WriteAllText(path: @"C:\Code_Logs\log.txt", textToBeWrote);
-            
+            // string textToBeRead = File.ReadAllText(path: @"C:\Code_Logs\log.txt");
 
-           // string textToBeRead = File.ReadAllText(path: @"C:\Code_Logs\log.txt");
+
 
             Console.WriteLine("Welcome to Anthony's Casino!  Let's start by telling me your name.");
             string playerName = Console.ReadLine();
