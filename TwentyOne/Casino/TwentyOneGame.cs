@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Casino.Interfaces;    
 
-namespace TwentyOne
+namespace Casino.TwentyOne
 {
    
     // Inheritance:  "is a" relationship.  This is a specific type of game (the base type).  It is not a "has a" relationship.    
@@ -28,7 +29,7 @@ namespace TwentyOne
             Dealer.Stay = false;
             Dealer.Deck = new Deck();
             Dealer.Deck.Shuffle(3); // Shuffle the deck
-            Console.WriteLine("How much do you wanna lose..oops I mean bet?");
+            Console.WriteLine("How much do you wanna bet?");
 
 
             //Implementing tryparse so Jordan cant break it...plus my comments are awesome

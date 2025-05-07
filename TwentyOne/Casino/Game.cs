@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino
 {
     // Abstract class: cannot be instantiated, but can be inherited (Base class)    
   public abstract class Game

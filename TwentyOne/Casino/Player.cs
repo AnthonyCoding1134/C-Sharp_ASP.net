@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino
 {
     
     public class Player
     {
+        //Constructor chaining
+        public Player(string name) : this(name, 100) // Default balance set to 100 if not specified
+        {
+        }
         //constructor: Initializing 3 properties when a new Player object is created
         public Player(string name, int beginningBalance)
         {
@@ -34,6 +38,7 @@ namespace TwentyOne
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
         public bool Stay { get; set; }
+        public Guid Id { get; set; }
 
         public bool Bet(int amount) // Property to hold the bet amount    
         {
