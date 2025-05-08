@@ -14,11 +14,11 @@ namespace CONSTRUCTOR_ASSIGNMENT
         {
             
             string logFilePath = @"C:\Code_Logs\ConstructorChainingLog.txt";
-            Person firstPerson = new Person();
+            var firstPerson = new Person();
             Person secondPerson = new Person("Antonio");
             Person thirdPerson = new Person("Alice", "Admin");
             File.WriteAllText(logFilePath, thirdPerson.username + " has been granted access as an " + thirdPerson.role);
-           // Guid newIdentifier = Guid.NewGuid();
+        
 
         }
 
@@ -27,14 +27,14 @@ namespace CONSTRUCTOR_ASSIGNMENT
            const string species = "human";
            public string username { get; set; }   
            public string role { get; set; }
-          // public string Id { get; set; }   
+          
 
 
 
             // Creating default constructor that runs when no parameters are passed  
-            public Person() : this("User123")
+            public Person() : this("GenericUser123")
             {
-
+                
             }
 
             // Creating constructor that runs when one parameter is passed  

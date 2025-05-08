@@ -29,33 +29,41 @@ namespace Casino.TwentyOne
             Dealer.Stay = false;
             Dealer.Deck = new Deck();
             Dealer.Deck.Shuffle(3); // Shuffle the deck
-            Console.WriteLine("How much do you wanna bet?");
 
 
-            //Implementing tryparse so Jordan cant break it...plus my comments are awesome
+            //Console.WriteLine("Place your bet:");
             foreach (Player player in Players)
             {
-                Console.WriteLine($"{player.Name}, place your bet:");
 
-                string input = Console.ReadLine();
-                int bet;
+                bool validAnswer = false;
+                int bet = 0;
 
-                // Keep asking until a valid numeric bet is entered
-                while (!int.TryParse(input, out bet))
+                
+                while (!validAnswer)
                 {
-                    Console.WriteLine("Use numbers not letters. Please enter a numeric value for your bet:");
-                    input = Console.ReadLine();
+                    Console.WriteLine("Place bet!");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer) Console.WriteLine("Use numbers not letters. Please enter a numeric value for your bet:");
+                }
+
+
+                if(bet < 0)
+                {
+                    throw new FraudException();
                 }
 
                 bool successfulBet = player.Bet(bet);
-                if (!successfulBet)
-                {
-                    Console.WriteLine("You're in over your head pal. Don't be such a degenerate");
-                    return;
-                }
+                    if (!successfulBet)
+                    {
+                        Console.WriteLine("You're in over your head pal. Don't be such a degenerate");
+                        return;
+                    }
 
-                Bets[player] = bet; // add the player and bet amount to the Bets dictionary
+                    Bets[player] = bet; // add the player and bet amount to the Bets dictionary
             }
+
+
+
 
             //Deals first 2 cards to players- checks for blackjack & if so- pays out
             for (int i = 0; i < 2; i++)

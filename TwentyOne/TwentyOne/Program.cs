@@ -35,7 +35,6 @@ namespace TwentyOne
            // var newPlayer = new Player("Anthony");
           
 
-            //constant
             const string casinoName = "Anthony's Casino";
 
            // Guid myIdentifier = Guid.NewGuid();
@@ -44,9 +43,23 @@ namespace TwentyOne
             Console.WriteLine("Welcome to {0}! Let's start by telling me your name.", casinoName);
             string playerName = Console.ReadLine();
 
-            Console.WriteLine("Hi {0}, much money did you bring today?", playerName);   
-            int bank = Convert.ToInt32(Console.ReadLine());
 
+            bool validAnswer = false;
+            int bank = 0;
+
+
+            while (!validAnswer)
+            {
+                Console.WriteLine("Hi {0}, much money did you bring today?", playerName);
+                validAnswer = int.TryParse(Console.ReadLine(), out bank);
+                if (!validAnswer)
+                {
+                    Console.WriteLine("Digits only!");
+                }
+
+            }
+
+           
             Console.WriteLine("Well {0}, would you like to play some blackjack?", playerName);
             string answer = Console.ReadLine().ToLower();
 
@@ -68,7 +81,23 @@ namespace TwentyOne
        
                 while (player.isActivelyPlaying && player.Balance > 0)
                 {
-                    game.Play();
+                    try
+                    {
+                        game.Play();  //wrapping the main part of the game in a try-catch block to handle exceptions
+                    }
+                    catch (FraudException)
+                    {
+                        Console.WriteLine("Security!!! You have been caught cheating! You are banned from the casino.");
+                        Console.ReadLine();
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("An error occurred. Please contact support.");
+                        Console.ReadLine();
+                        return;
+                    }
+                   
                 }
 
                 game.Players.Remove(player);
