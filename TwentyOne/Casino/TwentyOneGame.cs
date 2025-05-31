@@ -49,7 +49,7 @@ namespace Casino.TwentyOne
 
                 if(bet < 0)
                 {
-                    throw new FraudException();
+                    throw new FraudException("Security! Kick this wiseguy out!"); //this make it so the string is passed to the DB
                 }
 
                 bool successfulBet = player.Bet(bet);

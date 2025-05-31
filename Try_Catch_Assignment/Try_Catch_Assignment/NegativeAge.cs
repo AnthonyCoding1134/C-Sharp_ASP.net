@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Try_Catch_Assignment
 {
-    public class NegativeAge : Exception
+     class NegativeAge : Exception
     {
         public NegativeAge(): base()
         {

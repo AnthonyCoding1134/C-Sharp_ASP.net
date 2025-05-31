@@ -29,18 +29,18 @@ namespace Try_Catch_Assignment
                 if (userAge <= 0)
                 {
                     
-                    throw new NegativeAge();
+                    throw new NegativeAge("No zeroes or negative numbers!!");
                 }
 
                
                 Console.WriteLine($"You were born in {yearBorn}");
             }
 
-
+            
             // catch block to catch custom exception
-            catch (NegativeAge)
+            catch (NegativeAge ex)
             {
-                Console.WriteLine("Age can't be zero or negative");
+                Console.WriteLine(ex.Message);
             }
 
 
