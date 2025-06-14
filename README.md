@@ -1,15 +1,15 @@
 # C# Concepts and Training
 
-## Arrays
-## Lists
-## For Loops - While Loops
+#### Arrays
+#### Lists
+#### For Loops - While Loops
  * Object Oriented Programming
-  + classes
-  + objects
-  + encapsulation
-  + inheritance
-  + polymorphism
-  + abstraction
+  - classes
+  - objects
+  - encapsulation
+  - inheritance
+  - polymorphism
+  - abstraction
 
 1. Console Application
    - Class_Assigment
