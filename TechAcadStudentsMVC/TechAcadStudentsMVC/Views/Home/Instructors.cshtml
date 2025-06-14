@@ -1,0 +1,15 @@
+﻿@using TechAcadStudentsMVC.Models;
+
+@model List<Instructor>
+
+<h2>Instructor</h2>
+
+@{
+    foreach (Instructor instruct in Model)
+    {
+        <h4>@instruct.FirstName</h4>
+    }
+}
+
+
+
