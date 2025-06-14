@@ -16,7 +16,7 @@
     a. Class_Assigment
     b. Boolean Logic Assignment
 
-  2.  ASP.net web apps
+  2.  Web apps
      a. CarInsurance
      b. Newsletter App MVC
 
