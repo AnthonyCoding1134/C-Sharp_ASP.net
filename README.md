@@ -4,9 +4,11 @@
 ## Lists
 ## For Loops - While Loops
  * Object Oriented Programming
-    classes
-    objects
-    encapsulation
-    inheritance
-    polymorphism
-    abstraction
+  + classes
+  + objects
+  + encapsulation
+  + inheritance
+  + polymorphism
+  + abstraction
+
+  
