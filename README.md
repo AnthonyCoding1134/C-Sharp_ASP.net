@@ -13,8 +13,8 @@
 
   1. Console Application
 
-    a. Class_Assigment
-    b. Boolean Logic Assignment
+    <!-- a. Class_Assigment
+    b. Boolean Logic Assignment -->
 
   2.  Web apps
      a. CarInsurance
